@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">fast-food</string>
     <string name="action_settings">Settings</string>
+    <string name="add_a_new_employee">Add a New Employee</string>
+    <string name="enter_employee_name">Enter Employee Name</string>
+    <string name="delete">Delete</string>
+    <string name="belal_khan">Belal Khan</string>
+    <string name="technical">Technical</string>
+    <string name="inr_40000">INR 40000</string>
+    <string name="_2017_09_30_10_00_00">2017-09-30 10:00:00</string>
+    <string name="edit">Edit</string>
+    <string name="edit_employee">Edit Employee</string>
+    <string name="enter_employee_name">Enter Employee Name</string>
+    <string name="select_department">Select Department</string>
+    <string name="edit_employee">Edit Employee</string>
+    <string name="enter_employee_name">Enter Employee Name</string>
+    <string name="select_department">Select Department</string>
+    <string name="enter_employee_salary">Enter Employee Salary</string>
+    <string name="update">Update</string>
 
     <array name="departments">
         <item>Technical</item>
