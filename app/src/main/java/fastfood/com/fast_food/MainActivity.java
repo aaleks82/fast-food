@@ -1,5 +1,6 @@
 package fastfood.com.fast_food;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -92,12 +93,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String joiningDate = sdf.format(cal.getTime());
 
         if (inputsAreCorrect(name, salary)) {
+//            String insertSQL = "INSERT INTO employees (name, department, joiningdate, salary) VALUES (?, ?, ?, ?);";
+            ContentValues newValues = new ContentValues();
+            // Assign values for each column.
+            newValues.put("name", name);
+            newValues.put("department", dept);
+            newValues.put("joiningdate", joiningDate);
+            newValues.put("salary", salary);
+            long result=mDatabase.insert("employees", null, newValues);
 
-            String insertSQL = "INSERT INTO employees \n" +
-                    "(name, department, joiningdate, salary)\n" +
-                    "VALUES \n" +
-                    "(?, ?, ?, ?);";
-            mDatabase.execSQL(insertSQL, new String[]{name, dept, joiningDate, salary});
+//            mDatabase.execSQL(insertSQL, new String[]{name, dept, joiningDate, salary});
 
             Toast.makeText(this, "Employee Added Successfully", Toast.LENGTH_SHORT).show();
         }
