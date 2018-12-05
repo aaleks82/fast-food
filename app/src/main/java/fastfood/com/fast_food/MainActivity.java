@@ -74,9 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void addEmployee() {
+        mDatabase.execSQL("DROP TABLE employees");
         mDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS employees (\n" +
-                        "    id int NOT NULL CONSTRAINT employees_pk PRIMARY KEY,\n" +
+                        "    id INTEGER PRIMARY KEY AUTOINCREMENT ,\n" +
                         "    name varchar(200) NOT NULL,\n" +
                         "    department varchar(200) NOT NULL,\n" +
                         "    joiningDate datetime NOT NULL,\n" +
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             newValues.put("department", dept);
             newValues.put("joiningDate", joiningDate);
             newValues.put("salary", salary);
-            long result=mDatabase.insert("employees", null, newValues);
+            long result = mDatabase.insert("employees", null, newValues);
 
 //            mDatabase.execSQL(insertSQL, new String[]{name, dept, joiningDate, salary});
 
