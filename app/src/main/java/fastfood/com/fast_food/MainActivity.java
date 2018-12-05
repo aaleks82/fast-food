@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         "    id int NOT NULL CONSTRAINT employees_pk PRIMARY KEY,\n" +
                         "    name varchar(200) NOT NULL,\n" +
                         "    department varchar(200) NOT NULL,\n" +
-                        "    joiningdate datetime NOT NULL,\n" +
+                        "    joiningDate datetime NOT NULL,\n" +
                         "    salary double NOT NULL\n" +
                         ");"
         );
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Assign values for each column.
             newValues.put("name", name);
             newValues.put("department", dept);
-            newValues.put("joiningdate", joiningDate);
+            newValues.put("joiningDate", joiningDate);
             newValues.put("salary", salary);
             long result=mDatabase.insert("employees", null, newValues);
 
